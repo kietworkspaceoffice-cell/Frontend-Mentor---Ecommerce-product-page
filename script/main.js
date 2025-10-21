@@ -4,6 +4,104 @@ const next = document.querySelector('.next-btn');
 const prev = document.querySelector('.prev-btn');
 const anchors = document.querySelectorAll('.slideshow-thumbnails > a');
 
+const cartBtn = document.querySelector('.open-cart');
+const openMenu = document.querySelector('.menu-icon');
+const closeMenu = document.querySelector('.close-icon');
+const navMenu = document.getElementById('page-navigation');
+const mobileLightBox = document.querySelector('.light-box-background');
+const cartBox = document.querySelector('.cart-box');
+
+const quantityValue = document.querySelector('.quantity-value');
+const decreaseBtn = document.querySelector('.decrease-btn');
+const increaseBtn = document.querySelector('.increase-btn');
+
+const cartQuantity = document.querySelector('.multiple');
+const cartLastPrice = document.querySelector('.last-price');
+const productCart = document.querySelector('.product-cart');
+const cartCheckout = document.querySelector('.cart-checkout');
+const alertEmpty = document.querySelector('.alert-empty-cart');
+
+const clearCartBox = document.querySelector('.clear-cart-product');
+
+const addToCartBtn = document.querySelector('.add-to-cart-btn');
+
+let productQuantity = 0;
+let cartUnitQuantity = 0;
+let lastPrice;
+
+
+cartBtn.addEventListener('click', () => {
+  cartBox.classList.toggle("active");
+});
+
+function checkCart() {
+  if (cartUnitQuantity > 0) {
+    productCart.style.display = "flex";
+    cartCheckout.style.display = "block";
+    alertEmpty.style.display = "none";
+  } else if (cartUnitQuantity == 0) {
+    productCart.style.display = "none";
+    cartCheckout.style.display = "none";
+    alertEmpty.style.display = "block";
+  }
+};
+
+
+checkCart();
+
+clearCartBox.addEventListener('click', () => {
+  cartUnitQuantity = 0;
+  checkCart();
+})
+
+increaseBtn.addEventListener('click', () => {
+  productQuantity = productQuantity + 1;
+  quantityValue.innerHTML = productQuantity;
+  return productQuantity;
+});
+
+decreaseBtn.addEventListener('click', () => {
+  if (productQuantity > 0) {
+    productQuantity--;
+    quantityValue.innerHTML = productQuantity;
+  }
+  quantityValue.innerHTML = productQuantity;
+  return productQuantity;
+});
+
+// cart box value
+addToCartBtn.addEventListener('click', () => {
+  cartUnitQuantity = cartUnitQuantity + productQuantity;
+  console.log(cartUnitQuantity);
+  cartQuantity.innerHTML = cartUnitQuantity;
+  lastPrice = 125*cartUnitQuantity;
+  console.log(lastPrice);
+  cartLastPrice.innerHTML = "&#36;" + lastPrice + ".00";
+  checkCart();
+});
+
+
+
+
+// open menu
+openMenu.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+  mobileLightBox.classList.toggle('active');
+});
+closeMenu.addEventListener('click', () => {
+  navMenu.classList.remove('active');
+  mobileLightBox.classList.remove('active');
+});
+
+mobileLightBox.addEventListener('click', () => {
+  navMenu.classList.remove('active');
+  mobileLightBox.classList.remove('active');
+});
+
+
+
+
+// This is carousel JS
 let index = 0;
 const delay = 5000;
 let autoSlide;

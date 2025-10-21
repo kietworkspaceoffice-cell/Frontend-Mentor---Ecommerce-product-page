@@ -20,29 +20,56 @@
 <body>
   <header>
     <div class="mobile-top">
+      <!-- logo & mobile menu -->
       <img src="./images/icon-menu.svg" alt="open menu icon" id="menu-icon" class="menu-icon">
       <div class="brand-logo">
         <img src="./images/logo.svg" alt="sneakers logo" id="brand-logo">
       </div>
-      <nav class="">
-      <img src="./images/icon-close.svg" alt="icon-close menu" id="close-icon" class="close-icon">
-      <ul class="page-navigation">
-        <li><a href="#">Collections</a></li>
-        <li><a href="#">Men</a></li>
-        <li><a href="#">Women</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+      <!-- navigation -->
+      <nav id="page-navigation" class="">
+        <img src="./images/icon-close.svg" alt="icon-close menu" id="close-icon" class="close-icon">
+        <ul class="page-navigation">
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+    <!-- light-box -->
     <div class="light-box-background"></div>
-    
+    <!-- user active -->
     <div class="user-active">
-      <button>
+      <!-- cart -->
+      <button class="open-cart">
         <img src="./images/icon-cart.svg" alt="cart dropdown" id="cart-btn" class="cart-btn">
       </button>
+      <!-- avartar -->
       <img src="./images/image-avatar.png" alt="user avatar" id="user-avatar" class="user-avatar">
     </div>
+    <!-- cart pop up -->
+     <div class="cart-box">
+      <span>Cart</span>
+      <hr>
+      <div class="product-cart">
+        <div class="product-cart-thumbnail">
+          <img src="./images/image-product-1-thumbnail.jpg" alt="">
+        </div>
+        <!-- product information -->
+        <div class="product-cart-information">
+          <p class="product-cart-name">Fall Limited Edition Sneakers</p>
+          <span class="unit-price">&#36;125.00x</span>
+          <span class="multiple"></span>
+          <span class="last-price"></span>
+        </div>
+        <button class="clear-cart-product">
+          <img src="./images/icon-delete.svg" alt="">
+        </button>
+      </div>
+      <button class="cart-checkout">Checkout</button>
+      <p class="alert-empty-cart">Your cart is empty.</p>
+     </div>
   </header>
   <main>
     <section class="product-gallery">
@@ -102,7 +129,9 @@
         </div>        
         <span class="old-price">$250.00</span>
       </div>
+      <!-- Cart control -->
       <div class="cart-control">
+        
         <div class="quantity-selector">
           <button class="decrease-btn">
             <img src="./images/icon-minus.svg" alt="">
@@ -112,6 +141,7 @@
             <img src="./images/icon-plus.svg" alt="">
           </button>
         </div>
+
         <button class="add-to-cart-btn">
           <img src="./images/icon-cart.svg" alt="add to cart icon">
           Add to cart
