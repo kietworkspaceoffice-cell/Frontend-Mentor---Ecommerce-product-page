@@ -147,6 +147,7 @@ nav {
     display: none;
     width: 95vw;
     height: auto;
+    min-height: 250px;
     position: fixed;
     top: 6.5rem;
     left: 50%;;
@@ -204,8 +205,8 @@ hr {
 }
 /* main */
 main {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
 }
 
 /* Slide show container */
@@ -383,9 +384,6 @@ p {
 }
 
 /* active */
-.active {
-    display: flex;
-}
 
 @media screen and (min-width: 768px) {
     body {
@@ -404,6 +402,15 @@ p {
         width: auto;
         background-color: transparent;
         padding: 0;
+    }
+
+    /* desktop font size */
+    a, h2, p, button {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
     }
     
     /* header */
@@ -444,9 +451,10 @@ p {
     /* cart box open */
     .cart-box {
         width: auto;
+        min-width: 400px;
         box-shadow: 3px -3px 1px 0px  var(--Light-grayish-blue), 5px 5px 10px 2px var(--Grayish-blue);
         position: absolute;
-        right: 0rem;
+        right: 2rem;
         left: auto;
         transform: translateX(-25%);
     }
@@ -457,12 +465,16 @@ p {
 
     /* main */
     main {
-        grid-template-columns: repeat(2, 1fr);
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 6rem;
+        margin: 5rem;
     }
 
     /* slide show */
     .product-gallery {
-        width: 30vw;
+        width: 26vw;
     }
 
     .slideshow-container {
@@ -478,11 +490,15 @@ p {
         display: flex;
     }
 
+    /* product gallery active */
+    
+
     /* product-information */
     .product-information {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        width: 26vw;
     }
 
     .product-price {
@@ -495,5 +511,9 @@ p {
     .cart-control {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1.2rem;
+    }
+
+    .quantity-selector, .add-to-cart-btn {
+        height: 4rem;
     }
 }
