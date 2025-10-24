@@ -384,6 +384,9 @@ p {
 }
 
 /* active */
+.active {
+    display: flex;
+}
 
 @media screen and (min-width: 768px) {
     body {
