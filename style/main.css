@@ -82,10 +82,23 @@ header {
 
 .open-cart {
     background-color: transparent;
+    position:relative
 }
 
 .cart-btn {
     height: 1.5rem;
+}
+
+/* cart alert */
+.cart-alert {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: var(--Orange);
+    color: var(--White);
+    position: absolute;
+    border-radius: 100%;
+    top: -0.5rem;
+    right: -0.5rem;
 }
 
 .user-avatar {
@@ -365,6 +378,10 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.quantity-selector button {
+    background-color: transparent;
 }
 
 .quantity-value {

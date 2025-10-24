@@ -20,6 +20,7 @@ const cartLastPrice = document.querySelector('.last-price');
 const productCart = document.querySelector('.product-cart');
 const cartCheckout = document.querySelector('.cart-checkout');
 const alertEmpty = document.querySelector('.alert-empty-cart');
+const cartAlert = document.querySelector('.cart-alert');
 
 const clearCartBox = document.querySelector('.clear-cart-product');
 
@@ -39,10 +40,14 @@ function checkCart() {
     productCart.style.display = "flex";
     cartCheckout.style.display = "block";
     alertEmpty.style.display = "none";
+    cartAlert.style.display = "block";
+    cartAlert.innerHTML = cartUnitQuantity;
+
   } else if (cartUnitQuantity == 0) {
     productCart.style.display = "none";
     cartCheckout.style.display = "none";
     alertEmpty.style.display = "block";
+    cartAlert.style.display = "none";
   }
 };
 
